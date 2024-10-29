@@ -1,0 +1,85 @@
+site_name: Anomaly Detection in Transaction Data with MLOps
+site_url: https://tph-kds.github.io/ano_detection
+site_author: Tran Phi Hung
+site_description: >-
+  MLOps Project introducing concepts and application using DVC, CML, IBM Watson Machine Learning, IBM Watson OpenScale, Terraform and Cookiecutter. Learn how to implement MLOps.
+
+repo_name: anomaly_detection_in_transactions
+repo_url: https://github.com/tph-kds.github.io/ano_detection
+edit_uri: "tree/main/docs"
+
+theme: 
+  name: material
+  favicon: assets/favicon.png
+  logo: assets/logo-white.png
+
+  features:
+    - navigation.extend
+  palette:
+    # Light mode
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: light blue
+      accent: deep purple
+      toggle:
+        icon: octicons/moon-16
+        name: DARK MODE
+
+    # Dark mode
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: green
+      accent: orange
+      toggle:
+        icon: octicons/sun-16
+        name: LIGHT MODE
+  
+  icon:
+    repo: fontawesome/brands/github-alt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - footnotes
+
+
+nav:
+    - Home: 'index.md'
+    - Contents: 'glossary.md'
+    - Principles of MLOps:
+      - 'MLOps/Data/index.md'
+      - 'MLOps/PipelineAutomation/index.md'
+      - 'MLOps/FeatureStore/index.md'
+      - 'MLOps/CICDML/index.md'
+      - 'MLOps/Monitoring/index.md'
+    - Implementation Guide:
+      - Introduction:
+        - 'Structure/project_structure.md'
+        - 'Structure/starting.md'
+      - Environment:
+        - 'Infraestrutura/Auth/index.md'
+        - 'Infraestrutura/Terraform/index.md'
+        - 'Infraestrutura/Python/index.md'
+      - Versioning:
+        - 'Versionamento/index.md'
+        - 'Versionamento/basic_dvc.md'
+        - 'Versionamento/pipelines_dvc.md'
+      - 'Deployment/index.md'
+      - CI/CD for Machine Learning:
+        - 'CICD/tests.md'
+        - 'CICD/cml_testing.md'
+        - 'CICD/cml_deploy.md'
+      - 'Openscale/index.md'
+    - Project Workflow: 'Workflow/index.md'
+
+extra_css:
+  - ASCII_cinema/asciinema-player.css
+  - _css/extra_css.css
+extra_javascript:
+  - ASCII_cinema/asciinema-player.js
+  - _js/extra_js.js

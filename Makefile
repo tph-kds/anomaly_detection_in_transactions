@@ -42,7 +42,7 @@ branch ?= main
 # rule2_args = status
 # rule3_args = branch
 
-.PHONY: git_push
+.PHONY: git_add
 git_add:
 	git add . && git status 
 
