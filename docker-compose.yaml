@@ -40,14 +40,14 @@ services:
   prometheus:
     image: prom/prometheus
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml # Mount the prometheus.yml file
+      - ./grafana/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml # Mount the prometheus.yml file
     ports:
       - "9090:9090" # Expose port 9090 for Prometheus
 
   alertmanager:
     image: prom/alertmanager
     volumes:
-      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml # Mount the alertmanager.yml file
+      - ./grafana/prometheus/alertmanager.yaml:/etc/alertmanager/alertmanager.yaml # Mount the alertmanager.yml file
     ports:
       - "9093:9093" # Expose port 9093 for Alertmanager
     

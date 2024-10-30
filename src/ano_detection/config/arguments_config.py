@@ -12,18 +12,53 @@ class LoggerArgumentsConfig:
     """
 
     name: str = field(
-        default="trimRag_logger", metadata={"help": "Name of the logger."}
+        default="anod_logger", 
+        metadata={
+            "help": "Name of the logger.",
+            "type": "string",
+        }
     )
-    log_dir: str = field(default="logs", metadata={"help": "Directory to save logs."})
+    log_dir: str = field(
+        default = "logs", 
+        metadata = {
+            "help": "Directory to save logs.",
+            "type": "string",
+        }
+    )
     name_file_logs: str = field(
-        default="running_logs.log", metadata={"help": "Name of the log file."}
+        default="running_logs.log", 
+        metadata={
+            "help": "Name of the log file.",
+            "type": "string",
+        }
     )
     format_logging: str = field(
         default="[%(asctime)s - { %(levelname)s } - { %(module)s } - %(message)s]",
-        metadata={"help": "Format of the log file."},
+        metadata={
+            "help": "Format of the log file.",
+            "type": "string",
+        },
     )
     datefmt_logging: str = field(
-        default="%m/%d/%Y %H:%M:%S", metadata={"help": "Date format of the log file."}
+        default="%m/%d/%Y %H:%M:%S", 
+        metadata={
+            "help": "Date format of the log file.",
+            "type": "string",
+        }
+    )
+    service_name: str = field(
+        default="anod_service", 
+        metadata={
+            "help": "Name of the service showed on the grafana.",
+            "type": "string",
+        }
+    )
+    instance_id: int = field(
+        default=1, 
+        metadata={
+            "help": "Instance ID of the service showed on the grafana.",
+            "type": "integer",
+        }
     )
 
 
@@ -31,10 +66,17 @@ class LoggerArgumentsConfig:
 class ExceptionArgumentsConfig:
     error_message: str = field(
         default="Error occured in python script name [{file_name}] line number [{line_number}] error message [{error_message}]",
-        metadata={"help": "Error message for exception."},
+        metadata={
+            "help": "Error message for exception.",
+            "type": "string",
+        },
     )
 
     error_details: sys = field(
-        default=None, metadata={"help": "Error details for exception."}
+        default=None, 
+        metadata={
+            "help": "Error details for exception.",
+            "type": "string",
+        }
     )
 

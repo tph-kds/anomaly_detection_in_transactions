@@ -1,8 +1,8 @@
 import os
 import sys
 import logging
-from src.trim_rag.exception import MyException
-from src.trim_rag.config import LoggerArgumentsConfig
+# from src.ano_detection.exception import MyException
+from src.ano_detection.config import LoggerArgumentsConfig
 
 
 class LoggerHandler(logging.Handler):
@@ -23,13 +23,17 @@ class LoggerHandler(logging.Handler):
 
 
 class MainLoggerHandler(LoggerHandler):
-    def __init__(self, logger_config: LoggerArgumentsConfig):
+    def __init__(self, 
+                 logger_config: LoggerArgumentsConfig,
+                 **kwargs
+                 ):
         super(MainLoggerHandler, self).__init__()
         self.name = logger_config.name
         self.format_logging = logger_config.format_logging
         self.datefmt_logging = logger_config.datefmt_logging
         self.log_dir = logger_config.log_dir
         self.name_file_logs = logger_config.name_file_logs
+        self.handler_grafana = kwargs.get("handler_grafana")
         self.logger = self.get_logger()
 
     def reset_logging(self):
@@ -58,6 +62,7 @@ class MainLoggerHandler(LoggerHandler):
 
         logger.addHandler(stream_handler)
         logger.addHandler(file_handler)
+        logger.addHandler(self.handler_grafana)
 
         return logger
 

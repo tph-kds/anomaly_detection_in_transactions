@@ -7,6 +7,8 @@ logger:
   datefmt_logging: "%m/%d/%Y %H:%M:%S"
   log_dir: "src/artifacts/logs"
   name_file_logs: "running_logs.log"
+  service_name: "anod_logs"
+  instance_id: "1"
 
 exception:
   error_message: "Error occured in python script: name [{file_name}] =-= line number [{line_number}] =-= error message [{error_message}]"
