@@ -1,0 +1,9 @@
+ global:
+   scrape_interval: 15s # Scrape metrics every 15 seconds
+
+ scrape_configs:
+   - job_name: 'node-app' # Name of the job for scraping our app
+     static_configs:
+       - targets: ['host.docker.internal:4000'] # Target to scrape (our app)
+ rule_files:
+   - 'alert.rules.yml'

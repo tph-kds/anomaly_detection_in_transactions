@@ -1,0 +1,41 @@
+# Receivers
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+        insecure: true
+      http:
+        endpoint: 0.0.0.0:4318
+
+
+# Processors
+processors:
+  batch:
+    timeout: 1s
+
+
+# Exporters
+exporters:
+  otlphttp/logs:
+    endpoint: "http://loki:3100/otlp"
+    tls:
+      insecure: true
+
+      
+# Pipelines
+services:
+  otlp:
+    pipelines:
+      traces:
+        receivers: [otlp]
+        processors: [batch]
+        exporters: [otlphttp/logs]
+      metrics:
+        receivers: [otlp]
+        processors: [batch]
+        exporters: [otlphttp/logs]
+      logs:
+        receivers: [otlp]
+        processors: [batch]
+        exporters: [otlphttp/logs]

@@ -1,0 +1,11 @@
+groups:
+   - name: example
+     rules:
+       - alert: HighRequestLatency
+         expr: http_request_duration_seconds_mean{job="node-app"} > 0.5 # Check if average request duration is over 0.5 seconds
+         for: 2m # Trigger alert only if the condition is true for 2 minutes
+         labels:
+           severity: "page" # Add a label to the alert
+         annotations:
+           summary: "High request latency" # Alert summary
+           description: "The request latency is above 0.5s for more than 2 minutes." # Detailed description

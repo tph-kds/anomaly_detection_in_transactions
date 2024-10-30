@@ -164,3 +164,4 @@ cython_debug/
 
 datasets/*
 anod_env/*
+grafana/note.md
