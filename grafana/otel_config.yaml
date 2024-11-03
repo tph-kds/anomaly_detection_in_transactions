@@ -4,9 +4,16 @@ receivers:
     protocols:
       grpc:
         endpoint: 0.0.0.0:4317
-        insecure: true
+        # insecure: true
       http:
         endpoint: 0.0.0.0:4318
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: otel-collector
+          scrape_interval: 5s
+          static_configs:
+            - targets: [localhost:8889]
 
 
 # Processors
@@ -17,25 +24,43 @@ processors:
 
 # Exporters
 exporters:
+  prometheus/metrics:
+    endpoint: "0.0.0.0:8889"
+    # tls:
+    #   insecure: true
+      # labels:
+      #   job: "prometheus" 
+
   otlphttp/logs:
     endpoint: "http://loki:3100/otlp"
     tls:
       insecure: true
 
+
+  
+
+
       
 # Pipelines
-services:
-  otlp:
-    pipelines:
-      traces:
-        receivers: [otlp]
-        processors: [batch]
-        exporters: [otlphttp/logs]
-      metrics:
-        receivers: [otlp]
-        processors: [batch]
-        exporters: [otlphttp/logs]
-      logs:
-        receivers: [otlp]
-        processors: [batch]
-        exporters: [otlphttp/logs]
+service:
+  pipelines:
+    # traces:
+    #   receivers: [otlp]
+    #   processors: [batch]
+    #   exporters: [otlphttp]
+    # metrics:
+    #   receivers: [otlp]
+    #   processors: [batch]
+    #   exporters: [otlphttp]
+    # logs:
+    #   receivers: [otlp]
+    #   processors: [batch]
+    #   exporters: [otlphttp/logs]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus/metrics]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlphttp/logs]

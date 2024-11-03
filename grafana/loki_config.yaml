@@ -38,3 +38,7 @@ storage_config:
 
 pattern_ingester:
   enabled: true
+
+ruler:
+  alertmanager_url: http://localhost:9093
+

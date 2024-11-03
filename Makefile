@@ -18,7 +18,32 @@ define anod_env
 conda create -p anod_env python==3.9 -y
 endef
 
+## # MONITORING # ##
 
+.PHONY: up
+up: 
+	docker compose -f docker-compose.yaml up  -d --build
+
+.PHONY: down
+down: 
+	docker compose down
+
+# logs_name ?= grafana
+.PHONY: logs
+logs: 
+	docker compose logs otel-collector loki grafana prometheus alertmanager
+# ifeq (${logs_name},true) 
+# 	echo "Getting logs... Please wait..."
+# 	git commit -m "${message}" 
+# 	git push origin ${branch}
+
+# else ifeq (${status}, false)
+# 	echo "Withdrawing commit message..."
+# 	git reset
+		
+
+
+## # TESTING # ##
 
 .PHONY: test
 test: 

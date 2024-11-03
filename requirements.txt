@@ -32,6 +32,7 @@ mkdocs-material==9.5.42
 ## logs and alerting
 opentelemetry-distro==0.48b0
 opentelemetry-exporter-otlp==1.27.0
+python-logging-loki
 
 
 ## dev 
