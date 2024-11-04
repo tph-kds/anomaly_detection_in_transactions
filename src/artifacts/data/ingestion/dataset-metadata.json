@@ -1,0 +1,43 @@
+{
+  "id": "faizaniftikharjanjua/metaverse-financial-transactions-dataset",
+  "id_no": 4527413,
+  "datasetSlugNullable": "metaverse-financial-transactions-dataset",
+  "ownerUserNullable": "faizaniftikharjanjua",
+  "usabilityRatingNullable": 1.0,
+  "titleNullable": "Metaverse Financial Transactions Dataset",
+  "subtitleNullable": "Anomaly detection and fraud analysis in metaverse transactions",
+  "descriptionNullable": "## Description\nThis dataset provides blockchain financial transactions within the Open Metaverse, aiming to provide a rich, diverse, and realistic set of data for developing and testing anomaly detection models, fraud analysis, and predictive analytics in virtual environments. With a focus on applicability, this dataset captures various transaction types, user behaviors, and risk profiles across a global network.\n\n### Context\nThe Open Metaverse (https://www.openmv.org/) is an expansive, interoperable, and decentralized virtual space. Within this digital realm, blockchain technology plays a crucial role in facilitating transactions, managing digital assets, and ensuring secure and transparent interactions among participants. This dataset has been crafted to reflect the complexity and dynamism of blockchain activities within such an environment, providing a foundational tool for research, development, and innovation in metaverse-related technologies.\n\n### Content\nThe dataset includes 78,600 records, each representing a metaverse transaction with the following attributes:\n- **Timestamp**: Date and time of the transaction.\n- **Hour of Day**: Hour part of the transaction timestamp.\n- **Sending Address**: Blockchain address of the sender.\n- **Receiving Address**: Blockchain address of the receiver.\n- **Amount**: Transaction amount in a simulated currency.\n- **Transaction Type**: Categorization of the transaction (e.g., transfer, sale, purchase, scam, phishing).\n- **Location Region**: Simulated geographical region of the transaction.\n- **IP Prefix**: Simulated IP address prefix for the transaction.\n- **Login Frequency**: Frequency of login sessions by the user, varying by age group.\n- **Session Duration**: Duration of activity sessions in minutes.\n- **Purchase Pattern**: Behavioral pattern of purchases (e.g., focused, random, high-value).\n- **Age Group**: Categorization of users into new, established, and veteran based on their activity history.\n- **Risk Score**: Calculated risk score based on transaction characteristics and user behavior.\n- **Anomaly**: Risk level assessment (e.g., high_risk, moderate_risk, low_risk).\n\n### Usage\nThis dataset is designed for a wide range of uses, including but not limited to:\n- Anomaly detection and fraud analysis in blockchain transactions.\n- Behavioral modeling and predictive analytics in virtual economies.\n- Research on secure and transparent digital asset management in the metaverse.\n- Development and testing of algorithms for risk assessment and user verification.\n\n### Methodology\nTransactions were extracted using a sophisticated model that incorporates distributions, behavioral patterns, and risk assessments. The model ensures a diverse representation of activities, from typical transactions to potential fraudulent activities, across different user groups and global regions.\n\n### Acknowledgements\nThis dataset is shared by the Open Metaverse, a collaborative initiative dedicated to the advancement and democratization of virtual worlds. For more information, visit https://www.openmv.org/.\n\n### License\nThis dataset is provided for academic and educational purposes under Attribution 4.0 International (CC BY 4.0). Usage for commercial purposes is not permitted without prior consent from the Open Metaverse.",
+  "datasetId": 4527413,
+  "datasetSlug": "metaverse-financial-transactions-dataset",
+  "hasDatasetSlug": true,
+  "ownerUser": "faizaniftikharjanjua",
+  "hasOwnerUser": true,
+  "usabilityRating": 1.0,
+  "hasUsabilityRating": true,
+  "totalViews": 13459,
+  "totalVotes": 36,
+  "totalDownloads": 2057,
+  "title": "Metaverse Financial Transactions Dataset",
+  "hasTitle": true,
+  "subtitle": "Anomaly detection and fraud analysis in metaverse transactions",
+  "hasSubtitle": true,
+  "description": "## Description\nThis dataset provides blockchain financial transactions within the Open Metaverse, aiming to provide a rich, diverse, and realistic set of data for developing and testing anomaly detection models, fraud analysis, and predictive analytics in virtual environments. With a focus on applicability, this dataset captures various transaction types, user behaviors, and risk profiles across a global network.\n\n### Context\nThe Open Metaverse (https://www.openmv.org/) is an expansive, interoperable, and decentralized virtual space. Within this digital realm, blockchain technology plays a crucial role in facilitating transactions, managing digital assets, and ensuring secure and transparent interactions among participants. This dataset has been crafted to reflect the complexity and dynamism of blockchain activities within such an environment, providing a foundational tool for research, development, and innovation in metaverse-related technologies.\n\n### Content\nThe dataset includes 78,600 records, each representing a metaverse transaction with the following attributes:\n- **Timestamp**: Date and time of the transaction.\n- **Hour of Day**: Hour part of the transaction timestamp.\n- **Sending Address**: Blockchain address of the sender.\n- **Receiving Address**: Blockchain address of the receiver.\n- **Amount**: Transaction amount in a simulated currency.\n- **Transaction Type**: Categorization of the transaction (e.g., transfer, sale, purchase, scam, phishing).\n- **Location Region**: Simulated geographical region of the transaction.\n- **IP Prefix**: Simulated IP address prefix for the transaction.\n- **Login Frequency**: Frequency of login sessions by the user, varying by age group.\n- **Session Duration**: Duration of activity sessions in minutes.\n- **Purchase Pattern**: Behavioral pattern of purchases (e.g., focused, random, high-value).\n- **Age Group**: Categorization of users into new, established, and veteran based on their activity history.\n- **Risk Score**: Calculated risk score based on transaction characteristics and user behavior.\n- **Anomaly**: Risk level assessment (e.g., high_risk, moderate_risk, low_risk).\n\n### Usage\nThis dataset is designed for a wide range of uses, including but not limited to:\n- Anomaly detection and fraud analysis in blockchain transactions.\n- Behavioral modeling and predictive analytics in virtual economies.\n- Research on secure and transparent digital asset management in the metaverse.\n- Development and testing of algorithms for risk assessment and user verification.\n\n### Methodology\nTransactions were extracted using a sophisticated model that incorporates distributions, behavioral patterns, and risk assessments. The model ensures a diverse representation of activities, from typical transactions to potential fraudulent activities, across different user groups and global regions.\n\n### Acknowledgements\nThis dataset is shared by the Open Metaverse, a collaborative initiative dedicated to the advancement and democratization of virtual worlds. For more information, visit https://www.openmv.org/.\n\n### License\nThis dataset is provided for academic and educational purposes under Attribution 4.0 International (CC BY 4.0). Usage for commercial purposes is not permitted without prior consent from the Open Metaverse.",
+  "hasDescription": true,
+  "isPrivate": false,
+  "keywords": [
+    "finance",
+    "artificial intelligence",
+    "data analytics",
+    "classification",
+    "tabular"
+  ],
+  "licenses": [
+    {
+      "nameNullable": "Attribution 4.0 International (CC BY 4.0)",
+      "name": "Attribution 4.0 International (CC BY 4.0)",
+      "hasName": true
+    }
+  ],
+  "collaborators": [],
+  "data": []
+}

@@ -7,6 +7,7 @@ from src.config_params import (
 from .arguments_config import (
     LoggerArgumentsConfig,
     ExceptionArgumentsConfig,
+    DataIngestionConfig,
 )
 
 
@@ -45,6 +46,23 @@ class ConfiguarationManager:
         data_exception_config = ExceptionArgumentsConfig(
             error_message=config.exception.error_message,
             error_details=config.exception.error_details,
+        )
+
+        return data_exception_config
+    
+    ### DATA INGESTION CONFIG PARAMS PHASE ###
+    def get_data_ingestion_arguments_config(self) -> DataIngestionConfig:
+        config = self.config.data.stages.ingestion
+
+        create_directories([config.root_dir])
+
+        data_exception_config = DataIngestionConfig(
+            root_dir=config.root_dir,
+            download_dir=config.download_dir,
+            file_name=config.file_name,
+            metadata_name=config.metadata_name,
+            target_name = config.target_name
+
         )
 
         return data_exception_config

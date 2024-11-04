@@ -11,7 +11,7 @@ logFW = GrafanaLogsConfig(
     instance_id=logger_config.instance_id
 )
 handler_grafana = logFW.setup_logging(notset=logging.NOTSET)
-kwargs = {'handler_grafana': handler_grafana}
+kwargs = {'handler_grafana': handler_grafana, 'set_grafana_config': False}
 
 logger = MainLoggerHandler(logger_config=logger_config, **kwargs)
 

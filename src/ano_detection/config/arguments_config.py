@@ -80,3 +80,47 @@ class ExceptionArgumentsConfig:
         }
     )
 
+@dataclass(frozen=True)
+class DataIngestionConfig:
+    
+    root_dir: str = field(
+        default="data", 
+        metadata={
+            "help": "Root directory of the dataset.",
+            "type": "string",
+        }
+    )
+
+    download_dir: str = field(
+        default="data",
+        metadata={
+            "help": "Download directory of the dataset.",
+            "type": "string",
+        }
+    )
+
+    file_name: str = field(
+        default="dataset",
+        metadata={
+            "help": "Name of the dataset.",
+            "type": "string",
+        }
+    )
+
+    metadata_name: str = field(
+        default="metadata",
+        metadata={
+            "help": "Name of the metadata of the dataset.",
+            "type": "string",
+        }
+    )
+
+    target_name: str = field(
+        default="dataset",
+        metadata={
+            "help": "Name of the target of the dataset.",
+            "type": "string",
+        }
+    )
+
+

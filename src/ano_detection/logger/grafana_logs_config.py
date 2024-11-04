@@ -62,7 +62,7 @@ class GrafanaLogsConfig:
         # Add a BatchLogRecordProcessor to the logger provider with the exporter.
         self.logger_provider.add_log_record_processor(BatchLogRecordProcessor(exporter))
 
-        print("Connected to OTLP exporter at", self.endpoint)
+        # print("Connected to OTLP exporter at", self.endpoint)
 
         # except RpcError as e:
         #     # Check for UNAVAILABLE status and set up console fallback

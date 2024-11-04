@@ -33,7 +33,14 @@ class MainLoggerHandler(LoggerHandler):
         self.datefmt_logging = logger_config.datefmt_logging
         self.log_dir = logger_config.log_dir
         self.name_file_logs = logger_config.name_file_logs
-        self.handler_grafana = kwargs.get("handler_grafana")
+        self.handler_grafana = None
+        self.handler_flag = False
+        if kwargs.get("set_grafana_config"):
+            self.handler_grafana = kwargs.get("handler_grafana")
+            self.handler_flag = True
+        else:
+            self.handler_grafana = self.handler_grafana
+            self.handler_flag = self.handler_flag  
         self.logger = self.get_logger()
 
     def reset_logging(self):
@@ -62,7 +69,8 @@ class MainLoggerHandler(LoggerHandler):
 
         logger.addHandler(stream_handler)
         logger.addHandler(file_handler)
-        logger.addHandler(self.handler_grafana)
+        if self.handler_flag:
+            logger.addHandler(self.handler_grafana)
 
         return logger
 

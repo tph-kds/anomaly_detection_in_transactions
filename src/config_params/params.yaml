@@ -13,3 +13,23 @@ logger:
 exception:
   error_message: "Error occured in python script: name [{file_name}] =-= line number [{line_number}] =-= error message [{error_message}]"
   error_details: None
+
+data:
+  root_dir: "src/artifacts/data"
+  stages:
+    ingestion: 
+      root_dir: "data/"
+      download_dir: "src/artifacts/data/ingestion/"
+      file_name: "faizaniftikharjanjua/metaverse-financial-transactions-dataset"
+      target_name: "dataset.csv"
+      metadata_name: "metadata"
+    processing:
+      root_dir: "src/artifacts/data"
+      des_dir: "data/processed"
+    pretraining:
+      root_dir: "src/artifacts/data"
+      des_dir: "data/pretraining"
+      
+
+
+    
