@@ -122,5 +122,39 @@ class DataIngestionConfig:
             "type": "string",
         }
     )
+@dataclass(frozen=True)
+class DataProcessingConfig:
+    root_dir: str = field(
+        default="data/processed", 
+        metadata={
+            "help": "Root directory of the dataset.",
+            "type": "string",
+        }
+    )
+
+    des_dir: str = field(
+        default="processed/",
+        metadata={
+            "help": "Download directory of the dataset.",
+            "type": "string",
+        }
+    )
+
+    data_path: str = field(
+        default="data/dataset.csv",
+        metadata={
+            "help": "Path of the dataset.",
+            "type": "string",
+        }
+    )
+
+    unuse_features: list = field(
+        default_factory=list,
+        # default=["Unnamed: 0", "sending_address", "receiving_address", "ip_prefix"],
+        metadata={
+            "help": "List of features to be removed.",
+            "type": "list",
+        }
+    )
 
 

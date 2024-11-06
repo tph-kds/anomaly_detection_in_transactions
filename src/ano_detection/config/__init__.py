@@ -2,11 +2,14 @@ from .manager_config import ConfiguarationManager
 from .arguments_config import (
     ExceptionArgumentsConfig, 
     LoggerArgumentsConfig,
-    DataIngestionConfig
+    DataIngestionConfig,
+    DataProcessingConfig
 )
 
 __all__ = [
     "ConfiguarationManager",
     "ExceptionArgumentsConfig",
-    "LoggerArgumentsConfig"
+    "LoggerArgumentsConfig",
+    "DataIngestionConfig",
+    "DataProcessingConfig"
 ]

@@ -9,7 +9,8 @@ from src.ano_detection.config import ConfiguarationManager
 def ingestion():
 
     try:
-        logger.log_message("info", "Testing data ingestion phase....")
+        logger.log_message("info", "*"*100)
+        logger.log_message("info", "\nTesting data ingestion phase....".upper())
 
         config = ConfiguarationManager()
 
@@ -19,7 +20,9 @@ def ingestion():
 
         data_ingestion.initiate_data_ingestion()
 
-        logger.log_message("info", "Completed testing data ingestion phase....")
+        logger.log_message("info", "\nCompleted testing data ingestion phase....".upper())
+        logger.log_message("info", "*"*100)
+        
 
     except Exception as e:
         logger.log_message("error", f"Error in testing data ingestion phase: {e}")

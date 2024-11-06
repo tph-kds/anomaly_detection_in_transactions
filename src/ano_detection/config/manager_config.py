@@ -8,6 +8,7 @@ from .arguments_config import (
     LoggerArgumentsConfig,
     ExceptionArgumentsConfig,
     DataIngestionConfig,
+    DataProcessingConfig
 )
 
 
@@ -66,3 +67,19 @@ class ConfiguarationManager:
         )
 
         return data_exception_config
+    
+    ### DATA PROCESSING CONFIG PARAMS PHASE ###
+    def get_data_processing_arguments_config(self) -> DataProcessingConfig:
+        config = self.config.data.stages.processing
+
+        create_directories([config.root_dir])
+
+        data_exception_config = DataProcessingConfig(
+            root_dir=config.root_dir,
+            des_dir=config.des_dir,
+            data_path= config.data_path,
+            unuse_features=config.unuse_features,
+        )
+
+        return data_exception_config
+    

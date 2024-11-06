@@ -25,7 +25,9 @@ data:
       metadata_name: "metadata"
     processing:
       root_dir: "src/artifacts/data"
-      des_dir: "data/processed"
+      des_dir: "processed/"
+      data_path: "src/artifacts/data/ingestion/metaverse_transactions_dataset.csv"
+      unuse_features: ["sending_address", "receiving_address", "ip_prefix"]
     pretraining:
       root_dir: "src/artifacts/data"
       des_dir: "data/pretraining"
