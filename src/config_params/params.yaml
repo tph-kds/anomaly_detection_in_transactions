@@ -31,6 +31,12 @@ data:
     pretraining:
       root_dir: "src/artifacts/data"
       des_dir: "data/pretraining"
+      numerical_columns: ["transaction_type", "location_region", "purchase_pattern","age_group"]
+      dtype_convert: "int64"
+      drop_columns: ["purchase_pattern_high_value", "purchase_pattern_random"]
+      RANDOM_SEED: 2024
+      TEST_SIZE: 0.2 
+      VAL_SIZE: 0.15
       
 
 

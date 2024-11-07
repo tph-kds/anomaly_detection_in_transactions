@@ -133,7 +133,7 @@ class DataProcessing:
 
     ## Appear some outliers on Q1 and Q3, so we are going to remove them and see the results
     ## We will use 1.5 times the Q1 and 1.5 times the Q3 and focus on amout of transactions in that range
-    def remove_outliers(numerical_df):
+    def remove_outliers(self, numerical_df):
         try:
             logger.log_message("info", "Removing outliers for numerical features....")
             for num_col in numerical_df.columns:

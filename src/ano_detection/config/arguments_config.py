@@ -125,7 +125,7 @@ class DataIngestionConfig:
 @dataclass(frozen=True)
 class DataProcessingConfig:
     root_dir: str = field(
-        default="data/processed", 
+        default="src/artifacts/data", 
         metadata={
             "help": "Root directory of the dataset.",
             "type": "string",
@@ -156,5 +156,72 @@ class DataProcessingConfig:
             "type": "list",
         }
     )
+
+@dataclass(frozen=True)
+class DataTrainingConfig:
+
+    root_dir: str = field(
+        default="src/artifacts/data",
+        metadata={
+            "help": "Root directory of the dataset.",
+            "type": "string",
+        }
+    )
+    des_dir: str = field(
+        default="pretraining/",
+        metadata={
+            "help": "Download directory of the dataset.",
+            "type": "string",
+        }
+    ) 
+    numerical_columns: list = field(
+        default_factory=list,
+        # default=["transaction_type", "location_region", "purchase_pattern","age_group"],
+        metadata={
+            "help": "List of numerical features.",
+            "type": "list",
+        }
+    )
+
+    dtype_convert: str = field(
+        default="int64",
+        metadata={
+            "help": "Data type of the numerical features.",
+            "type": "string",
+        }
+    ) 
+
+    drop_columns: list = field(
+        default_factory=list,
+        # default=["Unnamed: 0", "sending_address", "receiving_address", "ip_prefix"],
+        metadata={
+            "help": "List of features to be removed.",
+            "type": "list",
+        }
+    )
+
+    RANDOM_SEED: int = field(
+        default=2024, 
+        metadata={
+            "help": "Random seed for reproducibility.",
+            "type": "integer",
+        }
+    )
+    TEST_SIZE: float = field(
+        default=0.2, 
+        metadata={
+            "help": "Test size of the dataset when splitting dataset for training phase.",
+            "type": "float",
+        }
+    ) 
+    VAL_SIZE: float = field(
+        default=0.15, 
+        metadata={
+            "help": "Validation size of the dataset when splitting dataset for training phase.",
+            "type": "float",
+        }
+    )
+
+
 
 

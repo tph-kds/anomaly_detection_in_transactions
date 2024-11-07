@@ -8,7 +8,9 @@ from .arguments_config import (
     LoggerArgumentsConfig,
     ExceptionArgumentsConfig,
     DataIngestionConfig,
-    DataProcessingConfig
+    DataProcessingConfig,
+    DataTrainingConfig,
+
 )
 
 
@@ -57,7 +59,7 @@ class ConfiguarationManager:
 
         create_directories([config.root_dir])
 
-        data_exception_config = DataIngestionConfig(
+        data_ingestion_config = DataIngestionConfig(
             root_dir=config.root_dir,
             download_dir=config.download_dir,
             file_name=config.file_name,
@@ -66,7 +68,7 @@ class ConfiguarationManager:
 
         )
 
-        return data_exception_config
+        return data_ingestion_config
     
     ### DATA PROCESSING CONFIG PARAMS PHASE ###
     def get_data_processing_arguments_config(self) -> DataProcessingConfig:
@@ -74,12 +76,32 @@ class ConfiguarationManager:
 
         create_directories([config.root_dir])
 
-        data_exception_config = DataProcessingConfig(
+        data_processing_config = DataProcessingConfig(
             root_dir=config.root_dir,
             des_dir=config.des_dir,
             data_path= config.data_path,
             unuse_features=config.unuse_features,
         )
 
-        return data_exception_config
+        return data_processing_config
+    
+    ### DATA TRAINING CONFIG PARAMS PHASE ###
+    def get_data_training_arguments_config(self) -> DataTrainingConfig:
+        config = self.config.data.stages.training
+
+        create_directories([config.root_dir])
+
+        data_training_config = DataTrainingConfig(
+            root_dir=config.root_dir,
+            des_dir=config.des_dir,
+            numerical_columns=config.numerical_columns,
+            dtype_convert=config.dtype_convert,
+            drop_columns=config.drop_columns,
+            RANDOM_SEED = config.RANDOM_SEED,
+            TEST_SIZE = config.TEST_SIZE,
+            VAL_SIZE = config.VAL_SIZE,
+
+        )
+
+        return data_training_config
     

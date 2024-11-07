@@ -3,7 +3,8 @@ from .arguments_config import (
     ExceptionArgumentsConfig, 
     LoggerArgumentsConfig,
     DataIngestionConfig,
-    DataProcessingConfig
+    DataProcessingConfig,
+    DataTrainingConfig
 )
 
 __all__ = [
@@ -11,5 +12,6 @@ __all__ = [
     "ExceptionArgumentsConfig",
     "LoggerArgumentsConfig",
     "DataIngestionConfig",
-    "DataProcessingConfig"
+    "DataProcessingConfig",
+    "DataTrainingConfig"
 ]
