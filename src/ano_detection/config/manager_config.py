@@ -10,6 +10,7 @@ from .arguments_config import (
     DataIngestionConfig,
     DataProcessingConfig,
     DataTrainingConfig,
+    ModelArgumentsConfig
 
 )
 
@@ -104,4 +105,20 @@ class ConfiguarationManager:
         )
 
         return data_training_config
+    
+    ### MODEL TRAINING CONFIG PARAMS PHASE ###
+    def get_model_training_arguments_config(self) -> ModelArgumentsConfig:
+        config = self.config.model.stages.models
+
+        create_directories([config.root_dir])
+
+        model_training_config = ModelArgumentsConfig(
+            root_dir=config.root_dir,
+            model_name=config.model_name,
+            model_path=config.model_path,
+            model_params=config.model_params,
+            model_description=config.model_description,
+        )
+
+        return model_training_config
     

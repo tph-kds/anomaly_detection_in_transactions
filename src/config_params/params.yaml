@@ -37,6 +37,29 @@ data:
       RANDOM_SEED: 2024
       TEST_SIZE: 0.2 
       VAL_SIZE: 0.15
+  models:
+    # random_forest:
+    # Initially we will use Random Forest Model
+    root_dir: "src/artifacts/models"
+    model_name: "random_forest"
+    model_path: "random_forest.pkl"
+    model_params: {"n_estimators": 100, "max_depth": 5, "random_state": 42}
+    model_description: "Random Forest Model"
+    
+    # gradient_boosting:
+    #   root_dir: "src/artifacts/models"
+    #   model_name: "gradient_boosting"
+    #   model_path: "gradient_boosting.pkl"
+    #   model_params: {"n_estimators": 100, "max_depth": 5, "random_state": 42}
+    #   model_description: "Gradient Boosting Model"
+
+    # logistic_regression:
+    #   root_dir: "src/artifacts/models"
+    #   model_name: "logistic_regression"
+    #   model_path: "logistic_regression.pkl"
+    #   model_params: {"n_estimators": 100, "max_depth": 5, "random_state": 42}
+    #   model_description: "Logistic Regression Model"
+
       
 
 

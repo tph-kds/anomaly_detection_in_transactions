@@ -4,7 +4,8 @@ from .arguments_config import (
     LoggerArgumentsConfig,
     DataIngestionConfig,
     DataProcessingConfig,
-    DataTrainingConfig
+    DataTrainingConfig,
+    ModelArgumentsConfig
 )
 
 __all__ = [
@@ -13,5 +14,6 @@ __all__ = [
     "LoggerArgumentsConfig",
     "DataIngestionConfig",
     "DataProcessingConfig",
-    "DataTrainingConfig"
+    "DataTrainingConfig",
+    "ModelArgumentsConfig",
 ]

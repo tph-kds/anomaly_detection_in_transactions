@@ -5,6 +5,7 @@ import joblib
 import base64
 import sys
 import torch
+import pickle
 import pandas as pd
 from src.ano_detection.exception import MyException
 
@@ -15,6 +16,7 @@ from ensure import (
 from box import ConfigBox  # truy cập được đối tượng vd: a.ensure thay vì a["ensure"]
 from pathlib import Path
 from typing import Any, List, Optional
+
 
 
 @ensure_annotations
@@ -147,6 +149,31 @@ def load_csv(path: Path) -> pd.DataFrame:
 
     return data
 
+@ensure_annotations
+def save_pickle(data: Any, path: Path):
+    """save pickle file
+
+    Args:
+        data (Any): data to be saved as pickle
+        path (Path): path to pickle file
+    """
+    with open(path, "wb") as f:
+        pickle.dump(data, f)
+
+@ensure_annotations
+def load_pickle(path: Path) -> Any:
+    """load pickle file
+
+    Args:
+        path (Path): path to pickle file
+
+    Returns:
+        Any: data as pickle
+    """
+    with open(path, "rb") as f:
+        data = pickle.load(f)
+
+    return data
 
 @ensure_annotations
 def load_json(path: Path) -> ConfigBox:

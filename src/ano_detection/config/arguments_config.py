@@ -222,6 +222,44 @@ class DataTrainingConfig:
         }
     )
 
+@dataclass(frozen=True)
+class ModelArgumentsConfig:
+    root_dir: str = field(
+        default="src/artifacts/models",
+        metadata={
+            "help": "Root directory of the dataset.",
+            "type": "string",
+        }
+    )
+    model_name: str = field(
+        default="name_model",
+        metadata={
+            "help": "Name of the model.",
+            "type": "string",
+        }
+    )
+    model_path: str = field(
+        default="model.pkl",
+        metadata={
+            "help": "Path of the model.",
+            "type": "string",
+        }
+    )
+    model_params: dict = field(
+        default={"n_estimators": 100, "max_depth": 5, "random_state": 42},
+        metadata={
+            "help": "Parameters of the model.",
+            "type": "dict",
+        }
+    )
+    model_description: str = field(
+        default="Model Description",
+        metadata={
+            "help": "Description of the model.",
+            "type": "string",
+        }
+    )
+
 
 
 
